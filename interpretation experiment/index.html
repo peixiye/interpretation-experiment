@@ -44,7 +44,7 @@
   </head>
   <body></body>
   <script>
-    var n_trials = 7;
+    var n_trials = 14;
 
     var jsPsych = initJsPsych({
       default_iti: 250, 
@@ -126,7 +126,7 @@
       choices: ['Continue']
     };
 
-    var intelligent = {
+    var intelligent1 = {
       type: jsPsychHtmlCoinBettingResponse,
       stimulus: '<img src="sen picture match/intelligent.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
       '<p>Which test result do you think is the one of Bob? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely test results.</p>',
@@ -146,7 +146,7 @@
       }
     };
 
-    var brilliant = {
+    var brilliant1 = {
       type: jsPsychHtmlCoinBettingResponse,
       stimulus: '<img src="sen picture match/brilliant.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
       '<p>Which test result do you think is the one of Bob? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely test results.</p>',
@@ -166,13 +166,56 @@
       }
     };
 
+    var intelligent2 = {
+      type: jsPsychHtmlCoinBettingResponse,
+      stimulus: '<img src="sen picture match/intelligent.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
+      '<p>Which test result do you think is the one of Bob? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely test results.</p>',
+      images: ["sen picture match/int70.jpg",
+        "sen picture match/int80.jpg",
+        "sen picture match/int90.jpg",
+        "sen picture match/int100.jpg",
+        "sen picture match/int110.jpg",
+        "sen picture match/int120.jpg",
+        "sen picture match/int130.jpg",
+        "sen picture match/int140.jpg",
+        "sen picture match/int150.jpg"
+      ],
+      on_finish: function() {
+        var curr_progress_bar_value = jsPsych.getProgressBarCompleted();
+        jsPsych.setProgressBar(curr_progress_bar_value + (1/n_trials));
+      }
+    };
+
+    var brilliant2 = {
+      type: jsPsychHtmlCoinBettingResponse,
+      stimulus: '<img src="sen picture match/brilliant.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
+      '<p>Which test result do you think is the one of Bob? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely test results.</p>',
+      images: ["sen picture match/int70.jpg",
+        "sen picture match/int80.jpg",
+        "sen picture match/int90.jpg",
+        "sen picture match/int100.jpg",
+        "sen picture match/int110.jpg",
+        "sen picture match/int120.jpg",
+        "sen picture match/int130.jpg",
+        "sen picture match/int140.jpg",
+        "sen picture match/int150.jpg"
+      ],
+      on_finish: function() {
+        var curr_progress_bar_value = jsPsych.getProgressBarCompleted();
+        jsPsych.setProgressBar(curr_progress_bar_value + (1/n_trials));
+      }
+    };
+
+    var trials_s1 = [intelligent1, brilliant1, intelligent2, brilliant2];
+    var randomized_s1 = jsPsych.randomization.shuffle(trials_s1);
+
     var context2 = {
       type: jsPsychHtmlButtonResponse,
       stimulus: '<p>In the second part, you will see a similar scene as the one presented below. Tom and Adam run a grocery store together. Tom is at the supplier’s right now, while Adam is at the store. Tom calls Adam to check the stock of coke.</p><img src="sen picture match/low.jpg" style="width:600px; height:250px; margin: 50px auto;">',
       choices: ['Continue']
     };
 
-    var low = {
+    var low1 = {
       type: jsPsychHtmlCoinBettingResponse,
       stimulus: '<img src="sen picture match/low.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
       '<p>What do you think Adam saw? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely stocks of coke.</p>',
@@ -192,7 +235,7 @@
       }
     };
 
-    var depleted = {
+    var depleted1 = {
       type: jsPsychHtmlCoinBettingResponse,
       stimulus: '<img src="sen picture match/depleted.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
       '<p>What do you think Adam saw? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely stocks of coke.</p>',
@@ -212,13 +255,56 @@
       }
     };
 
+    var low2 = {
+      type: jsPsychHtmlCoinBettingResponse,
+      stimulus: '<img src="sen picture match/low.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
+      '<p>What do you think Adam saw? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely stocks of coke.</p>',
+      images: ["sen picture match/low0.jpeg",
+        "sen picture match/low1.jpeg",
+        "sen picture match/low2.jpeg",
+        "sen picture match/low3.jpeg",
+        "sen picture match/low4.jpeg",
+        "sen picture match/low5.jpeg",
+        "sen picture match/low6.jpeg",
+        "sen picture match/low7.jpeg",
+        "sen picture match/low8.jpeg"
+      ],
+      on_finish: function() {
+        var curr_progress_bar_value = jsPsych.getProgressBarCompleted();
+        jsPsych.setProgressBar(curr_progress_bar_value + (1/n_trials));
+      }
+    };
+
+    var depleted2 = {
+      type: jsPsychHtmlCoinBettingResponse,
+      stimulus: '<img src="sen picture match/depleted.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
+      '<p>What do you think Adam saw? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely stocks of coke.</p>',
+      images: ["sen picture match/low0.jpeg",
+        "sen picture match/low1.jpeg",
+        "sen picture match/low2.jpeg",
+        "sen picture match/low3.jpeg",
+        "sen picture match/low4.jpeg",
+        "sen picture match/low5.jpeg",
+        "sen picture match/low6.jpeg",
+        "sen picture match/low7.jpeg",
+        "sen picture match/low8.jpeg"
+      ],
+      on_finish: function() {
+        var curr_progress_bar_value = jsPsych.getProgressBarCompleted();
+        jsPsych.setProgressBar(curr_progress_bar_value + (1/n_trials));
+      }
+    };
+
+    var trials_s2 = [low1, depleted1, low2, depleted2];
+    var randomized_s2 = jsPsych.randomization.shuffle(trials_s2);
+
     var context3 = {
       type: jsPsychHtmlButtonResponse,
       stimulus: '<p><p>In the third part, you will see a similar scene as the one presented below. Anna and Lily are planning to go on vacation to an island in June. Anna checked the weather forecast on her phone. Lily wants to know what it said.</p><img src="sen picture match/sometimes.jpg" style="width:600px; height:250px; margin: 50px auto;">',
       choices: ['Continue']
     };
 
-    var sometimes = {
+    var sometimes1 = {
       type: jsPsychHtmlCoinBettingResponse,
       stimulus: '<img src="sen picture match/sometimes.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
       '<p>Which weather forecast do you think Anna saw? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely weather forecasts.</p>',
@@ -238,7 +324,7 @@
       }
     };
 
-    var usually = {
+    var usually1 = {
       type: jsPsychHtmlCoinBettingResponse,
       stimulus: '<img src="sen picture match/usually.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
       '<p>Which weather forecast do you think Anna saw? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely weather forecasts.</p>',
@@ -258,7 +344,7 @@
       }
     };
 
-    var always = {
+    var always1 = {
       type: jsPsychHtmlCoinBettingResponse,
       stimulus: '<img src="sen picture match/always.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
       '<p>Which weather forecast do you think Anna saw? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely weather forecasts.</p>',
@@ -277,6 +363,69 @@
         jsPsych.setProgressBar(curr_progress_bar_value + (1/n_trials));
       }
     };
+
+    var sometimes2 = {
+      type: jsPsychHtmlCoinBettingResponse,
+      stimulus: '<img src="sen picture match/sometimes.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
+      '<p>Which weather forecast do you think Anna saw? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely weather forecasts.</p>',
+      images: ["sen picture match/s1.jpg",
+        "sen picture match/s2.jpg",
+        "sen picture match/s3.jpg",
+        "sen picture match/s4.jpg",
+        "sen picture match/s5.jpg",
+        "sen picture match/s6.jpg",
+        "sen picture match/s7.jpg",
+        "sen picture match/s8.jpg",
+        "sen picture match/s9.jpg"
+      ],
+      on_finish: function() {
+        var curr_progress_bar_value = jsPsych.getProgressBarCompleted();
+        jsPsych.setProgressBar(curr_progress_bar_value + (1/n_trials));
+      }
+    };
+
+    var usually2 = {
+      type: jsPsychHtmlCoinBettingResponse,
+      stimulus: '<img src="sen picture match/usually.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
+      '<p>Which weather forecast do you think Anna saw? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely weather forecasts.</p>',
+      images: ["sen picture match/s1.jpg",
+        "sen picture match/s2.jpg",
+        "sen picture match/s3.jpg",
+        "sen picture match/s4.jpg",
+        "sen picture match/s5.jpg",
+        "sen picture match/s6.jpg",
+        "sen picture match/s7.jpg",
+        "sen picture match/s8.jpg",
+        "sen picture match/s9.jpg"
+      ],
+      on_finish: function() {
+        var curr_progress_bar_value = jsPsych.getProgressBarCompleted();
+        jsPsych.setProgressBar(curr_progress_bar_value + (1/n_trials));
+      }
+    };
+
+    var always2 = {
+      type: jsPsychHtmlCoinBettingResponse,
+      stimulus: '<img src="sen picture match/always.jpg" style="display: block; margin: 20px auto; width: 800px; height: 300px;">' + 
+      '<p>Which weather forecast do you think Anna saw? Use the "+" and "&ndash;" buttons to distribute 10 coins across the likely weather forecasts.</p>',
+      images: ["sen picture match/s1.jpg",
+        "sen picture match/s2.jpg",
+        "sen picture match/s3.jpg",
+        "sen picture match/s4.jpg",
+        "sen picture match/s5.jpg",
+        "sen picture match/s6.jpg",
+        "sen picture match/s7.jpg",
+        "sen picture match/s8.jpg",
+        "sen picture match/s9.jpg"
+      ],
+      on_finish: function() {
+        var curr_progress_bar_value = jsPsych.getProgressBarCompleted();
+        jsPsych.setProgressBar(curr_progress_bar_value + (1/n_trials));
+      }
+    };
+
+    var trials_s3 = [sometimes1, usually1, always1, sometimes2, usually2, always2];
+    var randomized_s3 = jsPsych.randomization.shuffle(trials_s3);
 
     var feedback = {
       type: jsPsychSurveyText,
@@ -297,7 +446,9 @@
         fullscreen_mode: false
     }
 
-    jsPsych.run([consent1, consent2, instruction, fullscreen, context1, intelligent, brilliant, context2, low, depleted, context3, sometimes, usually, always, feedback, end_of_experiment, exit_fullscreen]);
+    var timeline = [consent1, consent2, instruction, fullscreen, context1].concat(randomized_s1).concat([context2]).concat(randomized_s2).concat([context3]).concat(randomized_s3).concat([feedback]).concat([end_of_experiment, exit_fullscreen]);
+
+    jsPsych.run(timeline);
 
   </script>
 </html>
