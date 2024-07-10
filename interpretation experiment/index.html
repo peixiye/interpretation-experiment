@@ -50,7 +50,7 @@
       default_iti: 250, 
       show_progress_bar: true,
       auto_update_progress_bar: false,
-      on_finish: function() {
+      on_finish: function(data) {
         var vals = data.values()
         if (vals.length > n_trials) {
           // Transmit data to Proliferate
