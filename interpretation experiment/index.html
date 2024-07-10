@@ -51,7 +51,13 @@
       show_progress_bar: true,
       auto_update_progress_bar: false,
       on_finish: function() {
-        jsPsych.data.displayData();
+        var vals = data.values()
+        if (vals.length > n_trials) {
+          // Transmit data to Proliferate
+          proliferate.submit({"trials": data.values()});
+        } else {
+          jsPsych.data.displayData();
+        }
       }
     });
 
